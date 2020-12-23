@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:padding="@dimen/layout_spacing"
+    app:cardCornerRadius="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/layout_spacing"
+            android:layout_marginTop="@dimen/layout_spacing"
+            android:layout_marginEnd="@dimen/layout_spacing"
+            android:text="@android:string/untitled"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_content"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/recycler_height"
+            android:layout_marginTop="8dp"
+            android:text="@string/share_locked"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/txt_title"
+            app:layout_constraintStart_toStartOf="@+id/txt_title"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title" />
+
+        <TextView
+            android:id="@+id/txt_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/img_lock_open"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Opened Fev 14, 10:00 AM" />
+
+        <ImageView
+            android:id="@+id/img_lock_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/letter_opening"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_status"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_status"
+            app:srcCompat="@drawable/ic_lock_open" />
+
+        <ImageView
+            android:id="@+id/img_lock"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:contentDescription="@string/share_locked"
+            app:layout_constraintBottom_toTopOf="@+id/txt_status"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title"
+            app:srcCompat="@drawable/ic_lock" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
